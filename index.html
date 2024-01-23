@@ -13,6 +13,12 @@
     <script defer src="js/script.js"></script>
 </head>
 <body>
-    
+    <div class="container">
+        <div id="root">
+            <ul class="list-group">
+                <li v-for="todo in todos" class="list-group-item" :class="{'text-decoration-line-through': todo.done === true}">{{todo.text}}</li>
+            </ul>
+        </div>    
+    </div>
 </body>
 </html>
