@@ -21,8 +21,13 @@
 
             <div></div>
             <ul class="list-group">
-                <li v-for="todo in todos" class="list-group-item d-flex justify-content-between" :class="{'text-decoration-line-through': todo.done === true}">
-                    {{todo.text}}
+                <li v-for="todo in todos" class="list-group-item d-flex justify-content-between">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" v-model="todo.done">
+                        <label class="form-check-label" :class="{'text-decoration-line-through': todo.done === true}">
+                            {{todo.text}}
+                        </label>
+                    </div>
                     <button type="button" class="btn-close" aria-label="Close" @click="removeTodo(todo.id)"></button>
                 </li>
                 <li class="list-group-item">
