@@ -16,7 +16,11 @@
     <div class="container">
         <div id="root">
             <ul class="list-group">
-                <li v-for="todo in todos" class="list-group-item" :class="{'text-decoration-line-through': todo.done === true}">{{todo.text}}</li>
+                <li v-for="todo in todos" class="list-group-item d-flex justify-content-between" :class="{'text-decoration-line-through': todo.done === true}">
+                    {{todo.text}}
+                    <button type="button" class="btn-close" aria-label="Close" @click="removeTodo(todo.id)"></button>
+                </li>
+                
             </ul>
         </div>    
     </div>
